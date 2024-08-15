@@ -102,8 +102,8 @@ nodepools:
   cloneFrom: "Kube_template_Ubu22wcloud-init"
 
   # Contents of cloud-config yaml file to put into the ISO user-data; Format should be:
-  # cloudConfig: |
-     #cloud-config
+  cloudConfig: |
+    #cloud-config
       users:
         - name: node_admin
           shell: /bin/bash
