@@ -4,6 +4,37 @@ cloudprovider: vsphere
 
 cloudCredentialSecretName: svc-rancher
 
+  # specify cluster labels
+labels: {}
+
+  # specify cluster annotations
+annotations: {}
+
+kubernetesVersion: "1.30.2+rke2r1"
+
+# general RKE options
+rke:
+  # enable local auth endpoint
+  localClusterAuthEndpoint:
+    enabled: false
+  # specify fqdn of local access endpoint
+  # fqdn: foo.bar.example
+  # specify cacert of local access endpoint
+  # caCerts: ""
+
+# specify user principal ids to be assiged as cluster members
+# clusterMembers:
+# - principalName: "local://u-z8zl5"
+#   roleTemplateName: "cluster-member"
+
+# enable monitoring
+monitoring:
+  enabled: false
+  # specify which version to install, can be semver range. If version is empty or is semver range, it will pick up the latest version.
+  # version: ""
+  # specify cutsom values set
+  # values:
+  #   foo: bar
 # Specify nodepool options. Can add multiple node groups, specify etcd, controlplane and worker roles.
 nodepools:
 - etcd: true
